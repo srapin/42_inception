@@ -1,9 +1,5 @@
 FROM debian:buster
 
-RUN apt update
+RUN tools/nginx_init.sh
 
-RUN apt install nginx -y
-
-RUN apt install vim -y    
-
-RUN apt install curl -y   
+COPY conf/nginx.conf /etc/nginx/nginx.conf
