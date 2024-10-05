@@ -8,11 +8,11 @@ apt_install(){
     done;
 }
 
-apt_nginx(){
+apt_mariadb(){
     for cmd in "update" "upgrade"; do
         apt_yes_exec $cmd
     done
-    apt_install "nginx" "vim" "curl" "OpenSSL"
+    apt_install "mariab-server" "vim" "curl" "OpenSSL"
 }
 
 dir_creation(){
@@ -23,4 +23,3 @@ dir_creation(){
 
 dir_creation
 apt_nginx
-openssl req -x509 -nodes -out /etc/nginx/ssl/inception.crt -keyout /etc/nginx/ssl/inception.key -subj "/C=FR/ST=IDF/L=Paris/O=42/OU=42/CN=srapin.42.fr/UID=srapin"
