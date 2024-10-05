@@ -5,6 +5,6 @@ RUN chmod +x /nginx_init.sh
 RUN /nginx_init.sh
 
 
-COPY conf/nginx.conf /etc/nginx/nginx.conf
+COPY conf/nginx.conf /etc/nginx/
 
 CMD [ "nginx", "-g", "daemon off;" ]

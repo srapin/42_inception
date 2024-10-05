@@ -1,18 +1,25 @@
+#!/bin/bash
+
 apt_yes_exec(){
     apt $* -y
 }
 
+apt_up(){
+    for cmd in "update" "upgrade"; do
+        apt_yes_exec $cmd
+    done
+}
+
 apt_install(){
     for prog in $*; do
-        apt_yes_exec "intall" $prog
+        apt_yes_exec "install" $prog
     done;
 }
 
 apt_nginx(){
-    for cmd in "update" "upgrade"; do
-        apt_yes_exec $cmd
-    done
-    apt_install "nginx" "vim" "curl" "OpenSSL"
+    apt_up
+    apt_install "nginx" "vim" "curl" "openssl"
+    
 }
 
 dir_creation(){
