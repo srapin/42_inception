@@ -5,6 +5,6 @@ RUN chmod +x /wordpress_init.sh
 RUN /wordpress_init.sh
 
 
-# COPY conf/nginx.conf /etc/nginx/nginx.conf
+COPY conf/php-fpm.conf /etc/php81/php-fpm.conf
 
-# CMD [ "nginx", "-g", "daemon off;" ]
+CMD ["php-fpm81", "-F"]

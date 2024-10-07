@@ -23,7 +23,7 @@ apt_nginx(){
 }
 
 dir_creation(){
-    for dir in "/etc/nginx/ssl" "/var/run/nginx"; do
+    for dir in "/etc/nginx/ssl" "/run/nginx" "/var/www/html"; do
         mkdir -p $dir
     done
 }
